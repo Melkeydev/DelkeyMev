@@ -27,7 +27,7 @@ async def on_message(msg):
     await msg.channel.send("Melkey streams start on Mondays, Wednesdays, and Fridays at 9PM EST")
 
   if cmd == "project()":
-    await msg.channel.send("Melkey is working on a NBA app written in react to search, and compare player stats! You can find it over at https://github.com/Amokstakov/NewNBAApp")
+    await msg.channel.send("Melkey is working on a NBA app written in react to search, and compare player stats!")
 
   if cmd == "pow()":
     await msg.channel.send("The pow is a sacred technique practice by the ancient tribes of Konoha.")
