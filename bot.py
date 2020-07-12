@@ -34,6 +34,9 @@ async def on_message(msg):
 
   if cmd == "crash()":
     await msg.channel.send("Nice try I am impossible to crash")
+    
+  if cmd == "dot()":
+    await msg.channel.send("Check out my dotfiles at https://github.com/Amokstakov/NvimConfig")
 
 client.run(token)
 
