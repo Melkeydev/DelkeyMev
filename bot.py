@@ -35,5 +35,7 @@ async def on_message(msg):
 
   }
   return switchcase.get(cmd, None)
-
-client.run(token)
+if __name__ == "__main__":
+    client.run(token)
+else:
+  print('Do not import.')
