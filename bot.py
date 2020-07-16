@@ -8,6 +8,7 @@ token = open("token.txt", "r").read()
 async def on_ready():
   print(f"We are live as {client.user}")
 
+
 @bot.command()
 async def twitch(ctx):
   ctx.send("Go Follow Melkeydev over at https://www.twitch.tv/melkeydev")
@@ -31,10 +32,9 @@ async def pow(ctx):
 @bot.command()
 async def crash(ctx):
   ctx.send("Nice try I am impossible to crash")
-
+  
 @bot.command()
 async def dot(ctx):
   ctx.send("Check out my dotfiles at https://github.com/Amokstakov/NvimConfig")
-
+  
 bot.run(token)
-
