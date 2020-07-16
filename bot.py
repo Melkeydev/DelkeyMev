@@ -1,42 +1,40 @@
 import discord
 from discord.ext import commands
 
-client = discord.Client()
+bot = commands.bot(command_prefix = '!')
 token = open("token.txt", "r").read()
 
-@client.event
+@bot.event
 async def on_ready():
   print(f"We are live as {client.user}")
 
-@client.event
-async def on_message(msg):
-  channelName = str(msg.channel)
 
-  if channelName != "commands" or channelName != "bot-construction":
-    return
+@bot.command()
+async def twitch(ctx):
+  ctx.send("Go Follow Melkeydev over at https://www.twitch.tv/melkeydev")
 
-  cmd = msg.content.lower()
+@bot.command()
+async def test(ctx):
+  ctx.send("Test worked you didnt break it yet")
 
-  if cmd == "twitch()":
-    await msg.channel.send("Go Follow Melkeydev over at https://www.twitch.tv/melkeydev")
+@bot.command()
+async def schedule(ctx):
+  ctx.send("Melkey streams start on Mondays, Wednesdays, and Fridays at 9PM EST")
 
-  if cmd == "test()":
-    await msg.channel.send("Test worked you didnt break it yet")
+@bot.command()
+async def project(ctx):
+  ctx.send("Melkey is working on a NBA app written in react to search, and compare player stats!")
 
-  if cmd == "schedule()":
-    await msg.channel.send("Melkey streams start on Mondays, Wednesdays, and Fridays at 9PM EST")
+@bot.command()
+async def pow(ctx):
+  ctx.send("The pow is a sacred technique practice by the ancient tribes of Konoha.")
 
-  if cmd == "project()":
-    await msg.channel.send("Melkey is working on a NBA app written in react to search, and compare player stats!")
-
-  if cmd == "pow()":
-    await msg.channel.send("The pow is a sacred technique practice by the ancient tribes of Konoha.")
-
-  if cmd == "crash()":
-    await msg.channel.send("Nice try I am impossible to crash")
-    
-  if cmd == "dot()":
-    await msg.channel.send("Check out my dotfiles at https://github.com/Amokstakov/NvimConfig")
-
-client.run(token)
-
+@bot.command()
+async def crash(ctx):
+  ctx.send("Nice try I am impossible to crash")
+  
+@bot.command()
+async def dot(ctx):
+  ctx.send("Check out my dotfiles at https://github.com/Amokstakov/NvimConfig")
+  
+bot.run(token)
