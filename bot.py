@@ -17,26 +17,23 @@ async def on_message(msg):
 
   cmd = msg.content.lower()
 
-  if cmd == "twitch()":
-    await msg.channel.send("Go Follow Melkeydev over at https://www.twitch.tv/melkeydev")
+  switchcase = {
 
-  if cmd == "test()":
-    await msg.channel.send("Test worked you didnt break it yet")
+      "twitch()": await msg.channel.send("Go Follow Melkeydev over at https://www.twitch.tv/melkeydev"),
 
-  if cmd == "schedule()":
-    await msg.channel.send("Melkey streams start on Mondays, Wednesdays, and Fridays at 9PM EST")
+      "test()": await msg.channel.send("Test worked you didnt break it yet"),
 
-  if cmd == "project()":
-    await msg.channel.send("Melkey is working on a NBA app written in react to search, and compare player stats!")
+      "schedule()": await msg.channel.send("Melkey streams start on Mondays, Wednesdays, and Fridays at 9PM EST"),
 
-  if cmd == "pow()":
-    await msg.channel.send("The pow is a sacred technique practice by the ancient tribes of Konoha.")
+      "project()": await msg.channel.send("Melkey is working on a NBA app written in react to search, and compare player stats!"),
 
-  if cmd == "crash()":
-    await msg.channel.send("Nice try I am impossible to crash")
-    
-  if cmd == "dot()":
-    await msg.channel.send("Check out my dotfiles at https://github.com/Amokstakov/NvimConfig")
+      "pow()": await msg.channel.send("The pow is a sacred technique practice by the ancient tribes of Konoha."),
+
+      "crash()": await msg.channel.send("Nice try I am impossible to crash"),
+
+      "dot()": await msg.channel.send("Check out my dotfiles at https://github.com/Amokstakov/NvimConfig")
+
+  }
+  return switchcase.get(cmd, None)
 
 client.run(token)
-
